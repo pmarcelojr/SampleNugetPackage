@@ -1,4 +1,4 @@
-name: PublishPackage
+name: Publish Packages
 
 on:
   workflow_dispatch:
@@ -18,9 +18,12 @@ jobs:
       run: dotnet restore
     
     - name: Geração do pacote
-      run: dotnet build -c Release -o out
+      run: dotnet build --configuration Release --no-restore
 
     - name: Push no NuGet
-      run: |
-        cd out
-        dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/pmarcelojr/index.json"
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: SampleNugetPackage.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          INCLUDE_SYMBOLS: true
