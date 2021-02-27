@@ -21,9 +21,5 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Push no NuGet
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:
-          PROJECT_FILE_PATH: SampleNugetPackage.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-          NUGET_SOURCE: https://nuget.pkg.github.com/pmarcelojr
-          INCLUDE_SYMBOLS: true
+      - name: Push no NuGet
+      run: dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/pmarcelojr/index.json" --skip-duplicate
