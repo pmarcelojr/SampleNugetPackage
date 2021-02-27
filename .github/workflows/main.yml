@@ -1,4 +1,4 @@
-name: Publish Package
+name: PublishPackage
 
 on:
   workflow_dispatch:
