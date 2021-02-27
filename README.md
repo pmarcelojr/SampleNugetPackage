@@ -1,2 +1,2 @@
 # SampleNugetPackage
-Um simples package Nuget para fins didáticos
+Publicando um simples package Nuget para fins didáticos.
