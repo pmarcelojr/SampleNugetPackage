@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageId>samplenugetpackage</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Marcelo Santos</Authors>
+    <Company>Marcelo Santos</Company>
+    <RepositoryUrl>https://github.com/pmarcelojr/SampleNugetPackage</RepositoryUrl>
+    <GenerateAppxPackageOnBuild>true</GenerateAppxPackageOnBuild>
+  </PropertyGroup>
+
+</Project>
